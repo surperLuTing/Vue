@@ -33,10 +33,17 @@
           async: false,
           url: this.getAccount,
           success: function (data) {
-            account = data.data.account;
+              if(data.result){
+                account = data.data.account;
+              }else{
+                  swal({title:'',text:'获取信息失败！'})
+              }
+
+
           }
         })
         this.accounts = account;
+        console.log(this.accounts)
       }
 
     }

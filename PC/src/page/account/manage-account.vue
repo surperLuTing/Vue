@@ -155,6 +155,8 @@
             if(data.result){
               tableList=data.data.accountList;
               sumPage=data.data.count;
+            }else{
+                swal({title:'',text:'获取列表失败！'})
             }
           }
         })

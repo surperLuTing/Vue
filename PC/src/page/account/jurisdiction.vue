@@ -152,6 +152,8 @@
             if(data.result){
                 tableList=data.data.list;
                 sumPage=data.data.count;
+            }else{
+                swal({title:"",text:"获取列表失败！"})
             }
           }
         })
@@ -269,7 +271,7 @@
       },
       //删除
       open3(row) {
-          var thats=this;
+        var thats=this;
         this.$confirm('此操作将永久删除该数据, 是否继续?', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
@@ -375,7 +377,7 @@
         })
         this.ChangeID=ChecksID;
         this.ChangeValue=ChecksValue;
-        var data={'roleId':this.RoleID,'menuIds':this.ChangeID,'menus':this.ChangeValue,'common':this.GLOBAL.common}
+        var data={'roleId':this.RoleID,'menuIds':this.ChangeID,'menus':this.ChangeValue,'common':this.GLOBAL.common,'loginAccount':'admin','Id':1}
         var that=this;
         $.ajax({
           type:'POST',
